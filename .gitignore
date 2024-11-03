@@ -1,0 +1,8 @@
+__pycache__
+dist/
+*.pyc
+.venv/
+.pytest.cache/
+.coverage
+coverage.xml
+*.cast

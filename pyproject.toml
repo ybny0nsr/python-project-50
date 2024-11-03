@@ -1,0 +1,29 @@
+[tool.poetry]
+name = "hexlet-code"
+version = "0.1.0"
+description = "Gendiff Project (Python back-end course)"
+authors = ["Oleg Tikhonov <Oleg.Tikhonoff@gmail.com>"]
+readme = "README.md"
+repository = "https://github.com/ybny0nsr/python-project-49"
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Other Audience",
+  "Programming Language :: Python :: 3.10",
+  "License :: Free For Educational Use",
+  "Natural Language :: English",
+  "Operating System :: POSIX :: Linux",
+  "Topic :: Education :: Testing",
+  "Private :: Do Not Upload",
+]
+packages = [
+  { include = "gen_diff" },
+]
+
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
