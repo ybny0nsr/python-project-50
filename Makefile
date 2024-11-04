@@ -3,7 +3,7 @@ install:	 # Первое клонирование репозитория или 
 
 setup: 	build publish package-install  # сборка + публикация + установка пакета
 
-bulld:		# Сборка пакета
+build:		# Сборка пакета
 	poetry build
 
 publish:	 # Публикация пакета
@@ -16,7 +16,7 @@ test-coverage:
 	poetry run pytest --cov=hexlet_code --cov-report xml
 
 lint:		# Линтер
-	poetry run flake8 hexlet_code
+	poetry run flake8 gen_diff
 
 test:
 	poetry run pytest

@@ -19,11 +19,12 @@ packages = [
   { include = "gen_diff" },
 ]
 
-
 [tool.poetry.dependencies]
 python = "^3.10"
 argparse = "^1.4.0"
 
+[tool.poetry.scripts]
+gendiff = "gen_diff.scripts.gendiff:main"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.3.3"
