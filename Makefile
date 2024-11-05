@@ -16,7 +16,7 @@ test-coverage:
 	poetry run pytest --cov=hexlet_code --cov-report xml
 
 lint:		# Линтер
-	poetry run flake8 gen_diff
+	poetry run flake8 gendiff
 
 test:
 	poetry run pytest

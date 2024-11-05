@@ -4,7 +4,7 @@ version = "0.1.0"
 description = "Gendiff Project (Python back-end course)"
 authors = ["Oleg Tikhonov <Oleg.Tikhonoff@gmail.com>"]
 readme = "README.md"
-repository = "https://github.com/ybny0nsr/python-project-49"
+repository = "https://github.com/ybny0nsr/python-project-50"
 classifiers = [
   "Development Status :: 4 - Beta",
   "Intended Audience :: Other Audience",
@@ -16,7 +16,7 @@ classifiers = [
   "Private :: Do Not Upload",
 ]
 packages = [
-  { include = "gen_diff" },
+  { include = "gendiff" },
 ]
 
 [tool.poetry.dependencies]
@@ -24,7 +24,7 @@ python = "^3.10"
 argparse = "^1.4.0"
 
 [tool.poetry.scripts]
-gendiff = "gen_diff.scripts.gendiff:main"
+gendiff = "gendiff.scripts.gendiff:main"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.3.3"
