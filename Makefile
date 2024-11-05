@@ -21,8 +21,8 @@ lint:		# Линтер
 test:
 	poetry run pytest
 
-tests:          # pytest с выводом программы
-	poetry run pytest -s
+testvv:     # pytest с выводом программы
+	poetry run pytest -vv
 
 selfcheck:
 	poetry check

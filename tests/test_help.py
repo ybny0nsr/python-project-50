@@ -10,14 +10,12 @@ positional arguments:
   second_file
 
 options:
-  -h, --help   show this help message and exit'''
-
-
-resp_two = '''usage: gendiff [-h] first_file second_file
-gendiff: error: the following arguments are required: first_file, second_file'''
+  -h, --help   show this help message and exit
+  -f FORMAT, --format FORMAT
+                        set format of output'''
 
 
 def test_help():
     result = run(['gendiff', '-h'], capture_output=True, text=True)
-    output = result.stdout.rstrip()
+    output = result.stderr.rstrip()
     assert output == resp_one
