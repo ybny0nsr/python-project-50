@@ -12,7 +12,8 @@ positional arguments:
 options:
   -h, --help            show this help message and exit
   -f FORMAT, --format FORMAT
-                        set format of output\n'''
+                        set format of output
+'''
 
 
 def test_help(capsys):
