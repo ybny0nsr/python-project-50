@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import argparse
+import gendiff.app_logic as app
 
 
 def main():
@@ -9,7 +10,9 @@ def main():
     parser.add_argument('second_file', type=str)
     parser.add_argument('-f', '--format',
                         help='set format of output')
-    parser.parse_args()
+    args = parser.parse_args()
+
+    app.engine(args)
 
 
 if __name__ == '__main__':
