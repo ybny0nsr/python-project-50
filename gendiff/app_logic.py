@@ -51,8 +51,8 @@ def engine(args):
     if None in (template_1, template_2):
         sys.exit(1)
 
-    structure_1 = parse(template_1)
-    structure_2 = parse(template_2)
+    structure_1 = parse_n_sort(template_1)
+    structure_2 = parse_n_sort(template_2)
 
     print(f'{template_1=}\n{structure_1=}\n')
     print(f'{template_2=}\n{structure_2=}')
