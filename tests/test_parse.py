@@ -1,4 +1,4 @@
-from gendiff.app_logic import parse
+from gendiff.app_logic import parse_n_sort
 
 
 structure_1 = {}
@@ -15,17 +15,18 @@ structure_3 = {
 
 
 
-def test_parse():
-    assert parse(structure_1) == []
-    assert parse(structure_2) == [['host', ['hexlet.io']],
-                                  ['timeout', [50]],
+def test_parse_n_sort():
+    assert parse_n_sort(structure_1) == []
+    assert parse_n_sort(structure_2) == [['follow', [False]],
+                                  ['host', ['hexlet.io']],
                                   ['proxy', ['123.234.53.22']],
-                                  ['follow', [False]],
+                                  ['timeout', [50]],
                                   ]
-    assert parse(structure_3) == [['shots', [['1', [1]],
+    assert parse_n_sort(structure_3) == [['jack', ['rabbit']],
+                                   ['shots', [
+                                             ['1', [1]],
                                              ['2', [2]],
                                              ['3', [3]]
                                              ],
                                    ],
-                                   ['jack', ['rabbit']],
                                   ]

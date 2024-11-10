@@ -29,11 +29,13 @@ def read_file_contents(file):
         print(f'An error occurred while reading the file "{file}')
 
 
-def parse(template: dict):
+def parse_n_sort(template: dict):
     result = []
     for key, value in template.items():
         result.append(
-            [key, parse(value)] if isinstance(value, dict) else [key, [value]])
+            [key, parse_n_sort(value)] if isinstance(value, dict)
+            else [key, [value]])
+    result.sort()
     return result
 
 
