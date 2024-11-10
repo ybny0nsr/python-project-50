@@ -3,7 +3,7 @@ import os
 import sys
 
 
-def file_not_found(file) -> bool:
+def file_not_found(file: str) -> bool:
     return not os.path.isfile(file)
 
 
@@ -22,14 +22,14 @@ def files_not_found(*files: tuple) -> bool:
     return check_status
 
 
-def read_file_contents(file):
+def read_file_contents(file: str) -> dict:
     try:
         return json.load(open(file))
     except Exception:
         print(f'An error occurred while reading the file "{file}')
 
 
-def parse_n_sort(template: dict):
+def parse_n_sort(template: dict) -> list:
     result = []
     for key, value in template.items():
         result.append(
@@ -39,9 +39,7 @@ def parse_n_sort(template: dict):
     return result
 
 
-def engine(args):
-    file_1 = args.first_file
-    file_2 = args.second_file
+def generate_diff(file_1: str, file_2: str):
 
     if files_not_found(file_1, file_2):
         sys.exit(1)
