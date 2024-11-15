@@ -7,7 +7,7 @@ def file_not_found(file: str) -> bool:
     return not os.path.isfile(file)
 
 
-def files_not_found(*files: tuple) -> bool:
+def files_not_found(*files: str) -> bool:
     check_status = False
     message = ''
     for file in files:
@@ -40,7 +40,7 @@ def parse_n_sort(template: dict) -> list:
     return result
 
 
-def python_to_json(value):
+def adjust_output(value):
     match value:
         case True: return 'true'
         case False: return 'false'
@@ -59,14 +59,14 @@ def compare_dicts(dict_1: dict, dict_2: dict) -> str:
     keys_list = sorted(list(keys_1 | keys_2))
     for key in keys_list:
         if key in diff_values:
-            result += f'{offset}- {key}: ' + python_to_json(dict_1[key]) + '\n'
-            result += f'{offset}+ {key}: ' + python_to_json(dict_2[key]) + '\n'
+            result += f'{offset}- {key}: ' + adjust_output(dict_1[key]) + '\n'
+            result += f'{offset}+ {key}: ' + adjust_output(dict_2[key]) + '\n'
         elif key in diff_plus:
-            result += f'{offset}+ {key}: ' + python_to_json(dict_2[key]) + '\n'
+            result += f'{offset}+ {key}: ' + adjust_output(dict_2[key]) + '\n'
         elif key in diff_minus:
-            result += f'{offset}- {key}: ' + python_to_json(dict_1[key]) + '\n'
+            result += f'{offset}- {key}: ' + adjust_output(dict_1[key]) + '\n'
         else:
-            result += f'{offset}  {key}: ' + python_to_json(dict_1[key]) + '\n'
+            result += f'{offset}  {key}: ' + adjust_output(dict_1[key]) + '\n'
     result += '}'
     return result
 
