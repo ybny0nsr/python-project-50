@@ -3,6 +3,7 @@
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/ybny0nsr/python-project-50/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/ybny0nsr/python-project-50/actions)
 <a href="https://codeclimate.com/github/ybny0nsr/python-project-50/maintainability"><img src="https://api.codeclimate.com/v1/badges/ef0fd1097233d8a3ffdc/maintainability" /></a>
+![workflow badge](https://github.com/ybny0nsr/python-project-50/actions/workflows/pypc.yml/badge.svg?event=push)
 
 
 ### A difference finder is an utility that determines the difference between two data structures
