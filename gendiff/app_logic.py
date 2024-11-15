@@ -11,13 +11,15 @@ def files_not_found(*files: str) -> bool:
     check_status = False
     message = ''
     for file in files:
+
         if file_not_found(file):
-            if not check_status:
+            if check_status is False:
                 message += 'FileNotFoundError: '
             else:
                 message += ', '
             message += f'{file}'
             check_status = True
+
     print(message)
     return check_status
 
