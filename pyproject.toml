@@ -22,6 +22,7 @@ packages = [
 [tool.poetry.dependencies]
 python = "^3.10"
 argparse = "^1.4.0"
+pyyaml = "^6.0.2"
 
 [tool.poetry.scripts]
 gendiff = "gendiff.scripts.gendiff:main"
