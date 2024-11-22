@@ -9,5 +9,8 @@
 ### A difference finder is an utility that determines the difference between two data structures
 
 ### Instructions and demos
-How it works:
-<a href="https://asciinema.org/a/689301" target="_blank"><img src="https://asciinema.org/a/689301.svg" /></a>
+#### How it works:
+- Finding differences in flat JSON files
+[![asciicast](https://asciinema.org/a/689301.svg)](https://asciinema.org/a/689301)
+- Finding differences in flat YAML files 
+[![asciicast](https://asciinema.org/a/xlJaCH5utxb53l3gQtoczn7TP.svg)](https://asciinema.org/a/xlJaCH5utxb53l3gQtoczn7TP)
