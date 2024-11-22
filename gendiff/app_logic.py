@@ -10,20 +10,15 @@ def file_not_found(file: str) -> bool:
 
 
 def files_not_found(*files: str) -> bool:
-    check_status = False
-    message = ''
+    file_is_missing = False
+    error_message = ''
     for file in files:
-
         if file_not_found(file):
-            if check_status is False:
-                message += 'FileNotFoundError: '
-            else:
-                message += ', '
-            message += f'{file}'
-            check_status = True
-
-    print(message)
-    return check_status
+            error_message += f"{', ' if file_is_missing else ''}{file}"
+            file_is_missing = True
+    if file_is_missing:
+        print('FileNotFoundError:', error_message)
+    return file_is_missing
 
 
 def get_file_ext(file: str) -> str:
