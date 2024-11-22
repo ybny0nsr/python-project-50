@@ -9,16 +9,16 @@ def file_not_found(file: str) -> bool:
     return not os.path.isfile(file)
 
 
-def files_not_found(*files: str) -> bool:
-    file_is_missing = False
+def are_files_missing(*files: str) -> bool:
+    at_least_one_is_missing = False
     error_message = ''
     for file in files:
         if file_not_found(file):
-            error_message += f"{', ' if file_is_missing else ''}{file}"
-            file_is_missing = True
-    if file_is_missing:
+            error_message += f"{', ' if at_least_one_is_missing else ''}{file}"
+            at_least_one_is_missing = True
+    if at_least_one_is_missing:
         print('FileNotFoundError:', error_message)
-    return file_is_missing
+    return at_least_one_is_missing
 
 
 def get_file_ext(file: str) -> str:
@@ -88,7 +88,7 @@ def compare_dicts(dict_1: dict, dict_2: dict) -> str:
 
 
 def generate_diff(file_1: str, file_2: str):
-    if files_not_found(file_1, file_2):
+    if are_files_missing(file_1, file_2):
         sys.exit(1)
 
     dict_1 = read_file_contents(file_1)
