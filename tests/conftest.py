@@ -32,15 +32,30 @@ def diffs():
     return diff
 
 @pytest.fixture()
-def test_file_1():
+def json_testfile_1():
     current_path = os.path.dirname(__file__)
-    file = 'fixtures/flat_file_1.json'
+    file = 'fixtures/flat_file1.json'
     file_w_path = os.path.join(current_path, file)
     return file_w_path
 
 @pytest.fixture()
-def test_file_2():
+def json_testfile_2():
     current_path = os.path.dirname(__file__)
-    file = 'fixtures/flat_file_2.json'
+    file = 'fixtures/flat_file2.json'
+    file_w_path = os.path.join(current_path, file)
+    return file_w_path
+
+
+@pytest.fixture()
+def yaml_testfile_1():
+    current_path = os.path.dirname(__file__)
+    file = 'fixtures/flat_file1.yaml'
+    file_w_path = os.path.join(current_path, file)
+    return file_w_path
+
+@pytest.fixture()
+def yaml_testfile_2():
+    current_path = os.path.dirname(__file__)
+    file = 'fixtures/flat_file2.yaml'
     file_w_path = os.path.join(current_path, file)
     return file_w_path
