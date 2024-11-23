@@ -1,6 +1,6 @@
 from gendiff.parsing import read_file_contents
 
 
-def test_read_file_contents(json_testfile_1, dict_1):
-    content = read_file_contents(json_testfile_1)
-    assert content == dict_1
+def test_read_file_contents(json_testfile1, dict1):
+    content = read_file_contents(json_testfile1)
+    assert content == dict1

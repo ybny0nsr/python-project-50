@@ -1,26 +1,28 @@
 import pytest
 import os.path
+import json
+import yaml
 
 
 @pytest.fixture
-def dict_1():
-    test_dict_1 = {
+def dict1():
+    test_dict1 = {
         "host": "hexlet.io",
         "timeout": 50,
         "proxy": "123.234.53.22",
         "follow": False
     }
-    return test_dict_1
+    return test_dict1
 
 
 @pytest.fixture
-def dict_2():
-    test_dict_2 = {
+def dict2():
+    test_dict2 = {
         "timeout": 20,
         "verbose": True,
         "host": "hexlet.io"
     }
-    return test_dict_2
+    return test_dict2
 
 
 @pytest.fixture
@@ -33,7 +35,7 @@ def diffs():
 
 
 @pytest.fixture()
-def json_testfile_1():
+def json_testfile1():
     current_path = os.path.dirname(__file__)
     file = 'fixtures/flat_file1.json'
     file_w_path = os.path.join(current_path, file)
@@ -41,7 +43,7 @@ def json_testfile_1():
 
 
 @pytest.fixture()
-def json_testfile_2():
+def json_testfile2():
     current_path = os.path.dirname(__file__)
     file = 'fixtures/flat_file2.json'
     file_w_path = os.path.join(current_path, file)
@@ -49,7 +51,74 @@ def json_testfile_2():
 
 
 @pytest.fixture()
-def yaml_testfile_1():
+def json_testdata1():
+    json_file = '''{
+  "common": {
+    "setting1": "Value 1",
+    "setting2": 200,
+    "setting3": true,
+    "setting6": {
+      "key": "value",
+      "doge": {
+        "wow": ""
+      }
+    }
+  },
+  "group1": {
+    "baz": "bas",
+    "foo": "bar",
+    "nest": {
+      "key": "value"
+    }
+  },
+  "group2": {
+    "abc": 12345,
+    "deep": {
+      "id": 45
+    }
+  }
+}'''
+    return json.loads(json_file)
+
+
+@pytest.fixture()
+def json_testdata2():
+    json_file = '''{
+  "common": {
+    "follow": false,
+    "setting1": "Value 1",
+    "setting3": null,
+    "setting4": "blah blah",
+    "setting5": {
+      "key5": "value5"
+    },
+    "setting6": {
+      "key": "value",
+      "ops": "vops",
+      "doge": {
+        "wow": "so much"
+      }
+    }
+  },
+  "group1": {
+    "foo": "bar",
+    "baz": "bars",
+    "nest": "str"
+  },
+  "group3": {
+    "deep": {
+      "id": {
+        "number": 45
+      }
+    },
+    "fee": 100500
+  }
+}'''
+    return json.loads(json_file)
+
+
+@pytest.fixture()
+def yaml_testfile1():
     current_path = os.path.dirname(__file__)
     file = 'fixtures/flat_file1.yaml'
     file_w_path = os.path.join(current_path, file)
@@ -57,7 +126,7 @@ def yaml_testfile_1():
 
 
 @pytest.fixture()
-def yaml_testfile_2():
+def yaml_testfile2():
     current_path = os.path.dirname(__file__)
     file = 'fixtures/flat_file2.yaml'
     file_w_path = os.path.join(current_path, file)
@@ -65,30 +134,48 @@ def yaml_testfile_2():
 
 
 @pytest.fixture()
-def data_4_parse_test():
-    dict_one = {}
-    dict_two = {
-        'host': 'hexlet.io',
-        'timeout': 50,
-        'proxy': '123.234.53.22',
-        'follow': False,
-    }
-    dict_three = {
-        'shots': {'1': 1, '2': 2, '3': 3},
-        'jack': 'rabbit',
-    }
-    expected_one = []
-    expected_two = [['follow', [False]],
-                    ['host', ['hexlet.io']],
-                    ['proxy', ['123.234.53.22']],
-                    ['timeout', [50]],
-                    ]
-    expected_three = [['jack', ['rabbit']],
-                      ['shots', [['1', [1]],
-                                 ['2', [2]],
-                                 ['3', [3]]
-                                 ],
-                       ],
-                      ]
-    return ((dict_one, expected_one), (dict_two, expected_two),
-            (dict_three, expected_three))
+def yaml_testdata1() -> dict:
+    yaml_file = '''common:
+  setting1: Value 1
+  setting2: 200
+  setting3: true
+  setting6:
+    key: value
+    doge:
+      wow: ''
+group1:
+  baz: bas
+  foo: bar
+  nest:
+    key: value
+group2:
+  abc: 12345
+  deep:
+    id: 45
+'''
+    return yaml.safe_load(yaml_file)
+
+@pytest.fixture()
+def yaml_testdata2() -> dict:
+    yaml_file = '''common:
+  follow: false
+  setting1: Value 1
+  setting3: null
+  setting4: blah blah
+  setting5:
+    key5: value5
+  setting6:
+    key: value
+    ops: vops
+    doge:
+      wow: so much
+group1:
+  foo: bar
+  baz: bars
+  nest: str
+group3:
+  deep:
+    id:
+      number: 45
+  fee: 100500'''
+    return yaml.safe_load(yaml_file)
