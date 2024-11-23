@@ -1,4 +1,4 @@
-from gendiff.app_logic import are_files_missing
+from gendiff.parsing import are_files_missing
 import os
 
 

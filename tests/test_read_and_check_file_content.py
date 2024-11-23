@@ -1,4 +1,4 @@
-from gendiff.app_logic import read_file_contents
+from gendiff.parsing import read_file_contents
 
 
 def test_read_file_contents(json_testfile_1, dict_1):
