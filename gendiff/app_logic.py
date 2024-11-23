@@ -1,6 +1,7 @@
 from sys import exit
 from gendiff.parsing import are_files_missing, read_file_contents
 
+
 def adjust_output(value):
     match value:
         case True: return 'true'

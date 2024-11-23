@@ -3,6 +3,7 @@ import os
 import yaml
 # TODO оставить только нужные импорты
 
+
 def parse_n_sort(template: dict) -> list:
     result = []
     for key, value in template.items():
