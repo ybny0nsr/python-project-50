@@ -39,29 +39,6 @@ def build_diff(dict1: dict, dict2: dict) -> list:
     return diff_rep
 
 
-def prepare_diff_view(diff_rep: list, level=1) -> str:
-    indent_per_level = 4
-    prefix_width = 2
-    prefix = {'equal values': ['  '], 'added key': ['+ '],
-              'missing key': ['- '], 'different values': ['- ', '+ ']}
-    get_data_func = {'equal values': [original_data], 'added key': [new_data],
-                     'missing key': [original_data],
-                     'different values': [original_data, new_data]}
-    indent = ' ' * (indent_per_level * level - prefix_width)
-    diff_view = '{\n'
-
-    for item in diff_rep:
-        case = get_case(item)
-        for prefix_, get_data in zip(prefix[case], get_data_func[case]):
-            diff_view += indent + prefix_ + get_key(item) + ': '
-            data = get_data(item)
-            diff_view += adjust_output(data) if is_scalar(
-                data) else prepare_diff_view(data, level + 1)
-            diff_view += '\n'
-    diff_view += ' ' * (indent_per_level * (level - 1)) + '}'
-    return diff_view
-
-
 # Abstractions for operations on internal representation
 def get_key(item: list) -> str:
     return item[0]
