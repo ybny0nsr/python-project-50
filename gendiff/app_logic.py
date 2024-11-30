@@ -21,4 +21,3 @@ def generate_diff(file_1: str, file_2: str, format_name='stylish'):
     else:
         formatter = 'gendiff.formatters.' + format_name
         print(eval(formatter)(diff))
-        
