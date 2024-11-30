@@ -3,7 +3,7 @@ from gendiff.file_ops import are_files_missing, read_file_contents
 from gendiff.parsing import build_diff, prepare_diff_view
 
 
-def generate_diff(file_1: str, file_2: str):
+def generate_diff(file_1: str, file_2: str,  format_name='stylish'):
     if are_files_missing(file_1, file_2):
         exit(1)
 

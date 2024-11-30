@@ -1,7 +1,5 @@
 import pytest
 import os.path
-import json
-import yaml
 
 
 @pytest.fixture
@@ -78,7 +76,7 @@ def json_testdata1():
     }
   }
 }'''
-    return json.loads(json_file)
+    return json_file
 
 
 @pytest.fixture()
@@ -114,7 +112,56 @@ def json_testdata2():
     "fee": 100500
   }
 }'''
-    return json.loads(json_file)
+    return json_file
+
+
+@pytest.fixture()
+def diff_testdata():
+    difference = '''{
+    common: {
+      + follow: false
+        setting1: Value 1
+      - setting2: 200
+      - setting3: true
+      + setting3: null
+      + setting4: blah blah
+      + setting5: {
+            key5: value5
+        }
+        setting6: {
+            doge: {
+              - wow: 
+              + wow: so much
+            }
+            key: value
+          + ops: vops
+        }
+    }
+    group1: {
+      - baz: bas
+      + baz: bars
+        foo: bar
+      - nest: {
+            key: value
+        }
+      + nest: str
+    }
+  - group2: {
+        abc: 12345
+        deep: {
+            id: 45
+        }
+    }
+  + group3: {
+        deep: {
+            id: {
+                number: 45
+            }
+        }
+        fee: 100500
+    }
+}'''
+    return difference
 
 
 @pytest.fixture()
@@ -153,7 +200,7 @@ group2:
   deep:
     id: 45
 '''
-    return yaml.safe_load(yaml_file)
+    return yaml_file
 
 @pytest.fixture()
 def yaml_testdata2() -> dict:
@@ -178,4 +225,4 @@ group3:
     id:
       number: 45
   fee: 100500'''
-    return yaml.safe_load(yaml_file)
+    return yaml_file
