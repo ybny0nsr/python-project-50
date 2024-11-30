@@ -16,4 +16,6 @@ def generate_diff(file_1: str, file_2: str, format_name='stylish'):
 
     diff = build_diff(dict1, dict2)
 
-    print(eval(format_name)(diff))
+    if format_name == 'stylish':
+        formatter = stylish
+        print(formatter(diff))
