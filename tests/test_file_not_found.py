@@ -1,4 +1,4 @@
-from gendiff.parsing import file_not_found
+from gendiff.file_ops import file_not_found
 import os
 
 

@@ -15,6 +15,9 @@ package-install: # Установка пакета в окружение пол�
 test-coverage:
 	poetry run pytest --cov=gendiff --cov-report xml
 
+test-coveragevv:
+	poetry run pytest --cov=gendiff
+
 lint:		# Линтер
 	poetry run flake8 gendiff
 

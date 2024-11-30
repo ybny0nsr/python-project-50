@@ -1,5 +1,5 @@
 import pytest
-from gendiff.app_logic import adjust_output
+from gendiff.parsing import adjust_output
 
 
 @pytest.mark.parametrize(("python_data", "like_json_view"),

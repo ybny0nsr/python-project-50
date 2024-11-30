@@ -1,5 +1,5 @@
 import json
-import gendiff.drills as d
+import gendiff.parsing as d
 
 json_file1 = '''{
   "common": {
