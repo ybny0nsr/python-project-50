@@ -10,7 +10,11 @@
 
 ### Instructions and demos
 #### How it works:
-- Finding differences in flat JSON files
+- Finding differences between flat JSON files
 [![asciicast](https://asciinema.org/a/689301.svg)](https://asciinema.org/a/689301)
-- Finding differences in flat YAML files 
+- Finding differences between flat YAML files 
 [![asciicast](https://asciinema.org/a/xlJaCH5utxb53l3gQtoczn7TP.svg)](https://asciinema.org/a/xlJaCH5utxb53l3gQtoczn7TP)
+- Findinq diggerences between complex JSON files
+[![asciicast](https://asciinema.org/a/1FwkXgQjcmhNjTVg63ULk6Ota.svg)](https://asciinema.org/a/1FwkXgQjcmhNjTVg63ULk6Ota)
+- Findinq diggerences between complex JSON files
+[![asciicast](https://asciinema.org/a/TNcivNYXqlQcDyUqtySVY2Ix0.svg)](https://asciinema.org/a/TNcivNYXqlQcDyUqtySVY2Ix0)
